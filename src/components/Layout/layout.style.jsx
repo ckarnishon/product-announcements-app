@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Wrapper = styled.div`
   width: 100%;
   min-height: 100%;
@@ -20,21 +21,3 @@ export const Container = styled.div`
   margin: 0 auto;
   background-color: #ffffff;
 `;
-
-export const Main = styled.main``;
-
-export const MainContainer = styled.div`
-  max-width: 1178px;
-  margin: 0 auto;
-  padding-top: 40px;
-`;
-
-export const MainH2 = styled.h2`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 42px;
-  color: #000000;
-  margin-bottom: 30px;
-`;
-

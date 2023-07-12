@@ -1,15 +1,16 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
+import tokenSlice from "./Slises/tokenSlise";
+import SellerSlise from "./Slises/sellerSlise"
 import { bacApi } from "./Api/Api";
 
 
-const rootReducer = combineReducers({
-  [bacApi.reducerPath]: bacApi.reducer,
- 
-})
-
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    [bacApi.reducerPath]: bacApi.reducer,
+    userToken: tokenSlice,
+    Seller: SellerSlise,
+  },
 
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(bacApi.middleware),
-})
+});
