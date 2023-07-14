@@ -1,6 +1,5 @@
 # Сайта онлайн объявлений, аналогичного "Авито"
-   [ Макет доступен здесь ](https://www.example.com)
-    (https://ltdfoto.ru/images/2023/07/14/SNIMOK-EKRANA-2023-07-14-175356.png)
+   [ Макет доступен здесь ](https://ltdfoto.ru/images/2023/07/14/SNIMOK-EKRANA-2023-07-14-175356.png)
     ![Главная страница приложения ](https://ltdfoto.ru/images/2023/07/14/SNIMOK-EKRANA-2023-07-14-175356.png)
 
 ## Технологии в проекте:
