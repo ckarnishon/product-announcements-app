@@ -1,16 +1,13 @@
 # Сайта онлайн объявлений, аналогичного "Авито"
-    Макет доступен [здесь](https://www.figma.com/file/ISqzPS7Sym7V004jFo5buE/%D0%A1%D0%B0%D0%B9%D1%82-%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3-%D0%90%D0%B2%D0%B8%D1%82%D0%BE?type=design&node-id=0-1&mode=design)
-    https://ltdfoto.ru/images/2023/07/14/SNIMOK-EKRANA-2023-07-14-175356.png
-
+   [ Макет доступен здесь ](https://www.example.com)
     (https://ltdfoto.ru/images/2023/07/14/SNIMOK-EKRANA-2023-07-14-175356.png)
-
+    ![Главная страница приложения ](https://ltdfoto.ru/images/2023/07/14/SNIMOK-EKRANA-2023-07-14-175356.png)
 
 ## Технологии в проекте:
 
 - Create-react-app
 - RTK Query Overview - Redux Toolkit
 - JavaScript
-- 
 
 ## Возможности проекта 
 
@@ -28,5 +25,22 @@
 - Возможность снять объявление с публикации
 - Редактирование объявления
 - Добавление отзывов о товар
+
+
+ ## _Запуск проекта_
+***
+1. Склонируйте репозиторий:
+```
+$ git clone https://github.com/komarovGo/product-announcements-app.git
+```
+2. Установите зависимости:
+```
+$ npm i
+```
+3. Запустите проект:
+```
+$ npm start
+```
+
 
 
