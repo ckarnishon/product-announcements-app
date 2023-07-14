@@ -1,5 +1,5 @@
 # Сайта онлайн объявлений, аналогичного "Авито"
-   [ Макет доступен здесь ](https://www.figma.com/file/ISqzPS7Sym7V004jFo5buE/%D0%A1%D0%B0%D0%B9%D1%82-%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3-%D0%90%D0%B2%D0%B8%D1%82%D0%BE?type=design&node-id=0-1&mode=design&t=rlVXLSg4wy7wcvR1-0))
+   [ Макет доступен здесь ](https://www.figma.com/file/ISqzPS7Sym7V004jFo5buE/%D0%A1%D0%B0%D0%B9%D1%82-%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3-%D0%90%D0%B2%D0%B8%D1%82%D0%BE?type=design&node-id=0-1&mode=design&t=rlVXLSg4wy7wcvR1-0)
     ![Главная страница приложения ](https://ltdfoto.ru/images/2023/07/14/SNIMOK-EKRANA-2023-07-14-175356.png)
 
 ## Технологии в проекте:
