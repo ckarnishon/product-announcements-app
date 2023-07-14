@@ -6,16 +6,10 @@ function Products({ posts }) {
   const HOST = "http://127.0.0.1:8090/"
 
   const handleProd = (prod) => {
-   
-
     navigate(`/article/${prod.id}`, { replace: true });
-
-    
   };
 
-console.log(posts);
-
-  return posts ? (
+  return posts  ? (
     <S.MainContent>
       <S.Cards>
         {posts?.map((prod) => (

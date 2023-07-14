@@ -5,21 +5,17 @@ import { useGetMyProductsQuery } from "../../redux/Api/Api";
 
 function MyProducts() {
   const navigate = useNavigate();
+  const HOST = "http://127.0.0.1:8090/";
 
   const { data, isSuccess } = useGetMyProductsQuery();
-  
- 
-
-
 
   const handleProd = (prod) => {
-    navigate(`/article/${prod.id}`, { replace: true });
+    navigate(`/myarticle/${prod.id}`, { replace: true });
   };
 
- console.log();
   if (isSuccess) {
     return data.length === 0 ? (
-      <S.CardTitle>У вас нет объявлений</S.CardTitle>
+      <S.CardTitle>Нет объявлений</S.CardTitle>
     ) : (
       <S.MainContent>
         <S.Cards>
@@ -27,7 +23,12 @@ function MyProducts() {
             <S.CardsItem key={prod.id} onClick={() => handleProd(prod)}>
               <S.CardsCard>
                 <S.CardImage>
-                  {/* <S.Img src={prod.images[0].url} alt="picture" /> */}
+                  <S.Img
+                    src={
+                      prod.images.length === 0 ? " " : HOST + prod.images[0].url
+                    }
+                    alt="picture"
+                  />
                 </S.CardImage>
                 <S.CardContent>
                   <S.CardTitle>{prod.title}</S.CardTitle>

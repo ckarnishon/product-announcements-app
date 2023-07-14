@@ -52,9 +52,10 @@ export const SellerImg = styled.div`
 
 export const LeftImg = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
+  border-radius: inherit;
 `;
 
 export const SellerRight = styled.div`
@@ -104,4 +105,66 @@ export const TitleH3 = styled.h3`
   line-height: 70px;
   font-weight: 500;
   color: #000000;
+`;
+
+export const ShowPhone = styled.div`
+  gap: 10px;
+  display: flex;
+  border: 2px solid;
+  border-radius: 12px;
+  left: 44%;
+  position: absolute;
+  top: 36%;
+  width: 350px;
+  height: 150px;
+  background-color: rgb(240, 240, 240);
+  padding: 12px;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const btnCloseLine = styled.div`
+  cursor: pointer;
+
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: #585353;
+        top: 44%;
+        right: 10px;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+    &:hover {
+        &:after,
+        &:before {
+            background-color: #0080C1;
+        }
+`;
+
+export const text = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+  color: rgb(0, 158, 228);
+  font-family: normal;
+`;
+export const SpanPhone = styled.span`
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 22px;
+  color: rgb(0, 158, 228);
+  font-family: normal;
 `;

@@ -14,13 +14,13 @@ export const Container = styled.div`
   background-color: #f4f5f6;
 `;
 
-
 export const ModalBlock = styled.div`
   position: absolute;
   z-index: 5;
   left: calc(50% - (800px / 2));
   top: 60px;
   opacity: 1;
+  border: 1px;
 `;
 
 export const ModalContent = styled.div`
@@ -33,6 +33,7 @@ export const ModalContent = styled.div`
   background-color: #ffffff;
   border-radius: 12px;
   position: relative;
+  border: 1px solid;
 `;
 
 export const ModalTitle = styled.h3`
@@ -106,7 +107,7 @@ export const ModalScroll = styled.div`
   }
 `;
 
-export const FormNewArt = styled.form`
+export const FormNewArt = styled.div`
   margin-top: 5px;
   margin-bottom: 15px;
   display: flex;
@@ -151,7 +152,6 @@ export const FormArea = styled.textarea`
   }
 `;
 
-
 export const BtnPab = styled.button`
   width: 181px;
   height: 50px;
@@ -161,9 +161,9 @@ export const BtnPab = styled.button`
   font-size: 16px;
   line-height: 24px;
   color: #ffffff;
-   &:hover {      
-    background-color: #0080C1;
-   }
+  &:hover {
+    background-color: #0080c1;
+  }
 `;
 
 export const ModalReviews = styled.div`
@@ -189,7 +189,6 @@ export const ReviewLeft = styled.div`
   margin-right: 12px;
 `;
 
-
 export const ReviewImg = styled.div`
   width: 40px;
   height: 40px;
@@ -197,16 +196,16 @@ export const ReviewImg = styled.div`
   background-color: #f0f0f0;
 `;
 
-
 export const Img = styled.img`
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  border-radius: inherit;
 `;
 
-
 export const ReviewRight = styled.div`
+  cursor: pointer;
   display: block;
 `;
 
@@ -230,4 +229,18 @@ export const ReviewText = styled.p`
   color: #000000;
 `;
 
+export const BlokAuth = styled.div`
+  display: flex;
+  gap: 85px;
+  margin: 40px;
+`;
 
+export const H3 = styled.h3`
+  font-size: 20px;
+`;
+
+export const LinkP = styled.p`
+  font-size: 20px;
+  color: rgb(0, 158, 228);
+  cursor: pointer;
+`;

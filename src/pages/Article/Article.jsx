@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetProductQuery } from "../../redux/Api/Api";
-import BtnChangBox from "../../components/Button/BtnChangBox";
+import ButtonPhone from "../../components/Button/ButtonPhone";
 
-import * as S from "../Article/myArticle.style";
+import * as S from "./myArticle.style";
 import { useDispatch } from "react-redux";
 import { setSeller } from "../../redux/Slises/sellerSlise";
 import { useState } from "react";
@@ -79,7 +79,7 @@ function MyArticle() {
                 )}
               </S.ArticleInfo>
               <S.PorPrice>{data.price} ₽</S.PorPrice>
-              <BtnChangBox info={data} params={params} />
+              <ButtonPhone info={data}  />
               <S.ArticleAuthor>
                 <S.AuthorImg>
                   <S.Img src={HOST + data.user.avatar} alt="avatar" />

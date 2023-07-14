@@ -14,8 +14,9 @@ export const MainArtic = styled.div`
 export const ArticContent = styled.div`
   display: flex;
   align-items: top;
-  justify-content: center;
+  justify-content: flex-start;
   ax-width: 792px;
+  gap: 40px;
   width: 100%;
   padding: 0 5px 117px;
 `;
@@ -44,6 +45,7 @@ export const Img = styled.img`
   height: 100%;
   display: block;
   object-fit: cover;
+  border-radius: inherit;
 `;
 
 export const ArticleImgBar = styled.div`
