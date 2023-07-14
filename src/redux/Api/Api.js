@@ -21,11 +21,45 @@ export const bacApi = createApi({
       query: () => ({
         url: "ads",
       }),
+      providesTags: ["Products"],
+    }),
+    addProduct: build.mutation({
+      query: (payload) => ({
+        url: "/ads",
+        method: "POST",
+        body: {
+          title: payload.title,
+          description: payload.description,
+          price: payload.price,
+          files: payload.files,
+        },
+      }),
+      invalidatesTags: ["Products", "MyProducts"],
+    }),
+    deleteAddProduct: build.mutation({
+      query: (id) => ({
+        url: `/ads/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Products"],
+    }),
+    addProductText: build.mutation({
+      query: (payload) => ({
+        url: "/adstext",
+        method: "POST",
+        body: {
+          title: payload.title,
+          description: payload.description,
+          price: payload.price,
+        },
+      }),
+      invalidatesTags: ["MyProducts"],
     }),
     getMyProducts: build.query({
       query: () => ({
         url: "ads/me",
       }),
+      providesTags: ["MyProducts"],
     }),
     getProduct: build.query({
       query: (id) => ({
@@ -36,6 +70,17 @@ export const bacApi = createApi({
       query: (id) => ({
         url: `ads/${id}/comments`,
       }),
+      providesTags: ["Comment"],
+    }),
+    AddComment: build.mutation({
+      query: ({ ...payload }) => ({
+        url: `ads/${payload.id}/comments`,
+        method: "POST",
+        body: {
+          text: payload.text,
+        },
+      }),
+      invalidatesTags: ["Comment"],
     }),
     getUser: build.query({
       query: () => ({
@@ -44,7 +89,7 @@ export const bacApi = createApi({
       providesTags: ["User"],
     }),
     changeUser: build.mutation({
-      query: ({ ...payload }) => ({
+      query: (payload) => ({
         url: "user",
         method: "PATCH",
         body: payload,
@@ -56,10 +101,8 @@ export const bacApi = createApi({
         url: "user/avatar",
         method: "POST",
         body: payload,
-        headers: {
-          "Content-Type": "multipart/form-data;",
-        },
       }),
+      invalidatesTags: ["User"],
     }),
     userRegistation: build.mutation({
       query: ({ ...payload }) => ({
@@ -75,17 +118,7 @@ export const bacApi = createApi({
         body: payload,
       }),
     }),
-    addProduct: build.mutation({
-      query: ({ ...payload }) => ({
-        url: "/ads",
-        method: "POST",
-        body: payload,
-        headers: {
-          "Content-Type": "multipart/form-data;",
-        },
-      }),
-    }),
   }),
 });
 
-export const {useGetAllProductsQuery, useGetProductQuery, useUserRegistationMutation, useUserLoginMutation, useGetUserQuery, useAddProductMutation, useChangeUserMutation, useChangeUserAvatarMutation, useGetMyProductsQuery, useGetCommentAdsQuery} = bacApi
+export const {useGetAllProductsQuery, useGetProductQuery, useUserRegistationMutation, useUserLoginMutation, useGetUserQuery, useAddProductMutation, useChangeUserMutation, useChangeUserAvatarMutation, useGetMyProductsQuery, useGetCommentAdsQuery, useAddCommentMutation, useAddProductTextMutation, useDeleteAddProductMutation} = bacApi

@@ -18,6 +18,7 @@ function Profile(props) {
   const [avatarChange, { data }] = useChangeUserAvatarMutation();
 
   console.log(data);
+  const HOST = "http://127.0.0.1:8090/";
 
   const value = {
     name: valueName,
@@ -30,10 +31,6 @@ function Profile(props) {
     changeUser(value);
   };
 
-  // const handleFils = (e) => {
-
-  // };
-
   console.log(img);
 
   const clickInput = () => {
@@ -41,13 +38,11 @@ function Profile(props) {
   };
 
   const handleUpload = (e) => {
-    setImg(e.target.files);
+    setImg(e.target.files[0]);
     const dataForm = new FormData();
-    dataForm.append("file", img);
+    dataForm.append("file", e.target.files[0]);
     avatarChange(dataForm);
   };
-
-  const Upload = () => {};
 
   return (
     <S.MainProfile>
@@ -56,7 +51,7 @@ function Profile(props) {
         <S.ProfileSettings>
           <S.SettingsLeft>
             <S.SettingsImg>
-              <S.Img src="#" alt="avatar" />
+              <S.Img src={HOST + props.data.avatar} alt="avatar" />
             </S.SettingsImg>
 
             <input
@@ -66,7 +61,6 @@ function Profile(props) {
               hidden
               onChange={handleUpload}
             />
-            <h3 onClick={Upload}> pfuhepbn</h3>
             <S.ChangePhoto onClick={clickInput}>Заменить</S.ChangePhoto>
           </S.SettingsLeft>
           <S.SettingsRight>

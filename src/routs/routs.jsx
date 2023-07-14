@@ -9,6 +9,7 @@ import Main from "../pages/Main/Main";
 import LayoutHeader from "../components/Layout/LayoutHeader";
 import Profile from "../pages/Profile/Profile";
 import Seller from "../pages/Seller/Seller";
+import Article from "../pages/Article/Article";
 import MyArticle from "../pages/MyArticle/MyArticle";
 
 export function AppRoutes() {
@@ -23,11 +24,10 @@ export function AppRoutes() {
       <Route element={<LayoutHeader />}>
         <Route path="profile" element={<Profile />} />
         <Route path="seller" element={<Seller />} />
-        <Route path="article/:id" element={<MyArticle />} />
+        <Route path="article/:id" element={<Article />} />
+        <Route path="myarticle/:id" element={<MyArticle />} />
       </Route>
-      <Route element={<ProtectedRoute isAllowed={isAuth} />}>
-        
-      </Route>
+      <Route element={<ProtectedRoute isAllowed={isAuth} />}></Route>
     </Routes>
   );
 }

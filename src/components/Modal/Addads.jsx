@@ -1,49 +1,50 @@
 import { useState } from "react";
-import { useAddProductMutation } from "../../redux/Api/Api";
+import { useAddProductMutation, useAddProductTextMutation } from "../../redux/Api/Api";
 import * as S from "./ads.style";
 
 function Addasd({ setNewAdver }) {
   const [adsTitle, setAdsTitle] = useState();
   const [adsDescript, setAdsDescript] = useState();
   const [price, setPrice] = useState();
-  const [img, setImg] = useState();
+  const [img, setImg] = useState(null);
 
-  const [produckt, { data, isLoading, error }] = useAddProductMutation();
-
-  const hideNewAdver = () => {
-    setNewAdver(false);
-  };
+  const [produckt, { data }] = useAddProductMutation();
+  const [producktText] = useAddProductTextMutation();
+  console.log(data);
 
   const handleFils = (e) => {
     setImg(e.target.files);
   };
-  const value = {
-    title: adsTitle,
-    description: adsDescript,
-    price: price,
-    files: img,
-  };
-  const handleUpload = async () => {
+
+   
+  const handleUpload =  () => {
+    const dataForm = new FormData();
+    dataForm.append("files", img);
+
+    const payload = {
+      title: adsTitle,
+      description: adsDescript,
+      price: price,
+      files: dataForm,
+    };
+
     if (!img) {
-      alert("Картинка не добавлена");
     }
+    
+    producktText(payload);
+    setNewAdver(false);
 
-    await produckt(value);
-    hideNewAdver();
+    // produckt(payload);
   };
-
-  console.log(data, isLoading);
-console.log(error);
-  console.log(value);
-
+  console.log(img);
   return (
     <S.ModalBlock>
       <S.ModalContent>
         <S.ModalTitle>Новое объявление</S.ModalTitle>
         <S.BtnCloseDiv>
-          <S.btnCloseLine onClick={hideNewAdver} />
+          <S.btnCloseLine onClick={() => setNewAdver(false)} />
         </S.BtnCloseDiv>
-        <S.FormNewArt id="formNewArt" action="#">
+        <S.FormNewArt>
           <S.FormBlock>
             <S.Label htmlFor="name">Название</S.Label>
             <S.FormInput

@@ -35,14 +35,14 @@ export const SettingsImg = styled.div`
   height: 170px;
   border-radius: 50%;
   background-color: #f0f0f0;
-  
 `;
 
 export const Img = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
+  border-radius: inherit;
 `;
 
 export const ChangePhoto = styled.div`

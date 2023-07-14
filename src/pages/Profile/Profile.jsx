@@ -1,6 +1,6 @@
 import { useAuth } from "../../redux/Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import ProfileTitle from "../../components/ProfileContent/ProfileTitle";
 import MyProducts from "../../components/Products/MyProducts";
@@ -8,12 +8,11 @@ import * as S from "./profile.style";
 import { useGetUserQuery } from "../../redux/Api/Api";
 
 function Profile() {
-  const [posts, setPosts] = useState([]);
-
   const navigate = useNavigate();
   const { isAuth } = useAuth();
-  // const [user, setUser] = useState({});
+
   const { data, isSuccess } = useGetUserQuery();
+
   useEffect(() => {
     if (!isAuth) {
       navigate("/login", { replace: true });
@@ -29,7 +28,7 @@ function Profile() {
           <ProfileTitle data={data} />
           <S.TitleH3>Мои товары</S.TitleH3>
         </S.MainCtnterBlock>
-        <MyProducts posts={posts} />
+        <MyProducts  />
       </S.Container>
     </S.Main>
   ) : (
